@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>蜀地旅行助手</title>
+	<style>
+		/* 自定义聊天按钮样式 */
+		.coze-chat-button {
+		background-color: #2ecc71 !important;
+		box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+		}
+	</style>
+</head>
+<body>
+	<h1>欢迎使用蜀地旅行助手</h1>
+	<p>点击右下角按钮开始规划您的旅程！</p>
+
+	<!-- Coze 聊天窗口 -->
+	<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.6/libs/cn/index.js"></script>
+	<script>
+		new CozeWebSDK.WebChatClient({
+		config: {
+			bot_id: '7494682549848653839'
+		},
+		componentProps: {
+			title: '蜀地旅行助手',
+			theme: 'light',
+			position: 'bottom-right',
+			welcomeMessage: '👋 你好！需要帮您规划成都旅行路线吗？'
+		},
+		auth: {
+			type: 'token',
+			token: 'pat_uFNuIGxUpHyddCYFFD47ByscyWL6ZqmgEKH9cPuIOgJESTHBRSsJ5BwEKDe5NulE',
+			onRefreshToken: function () {
+			// 实际项目中应从后端获取新 Token（此处仅为示例）
+			return 'pat_uFNuIGxUpHyddCYFFD47ByscyWL6ZqmgEKH9cPuIOgJESTHBRSsJ5BwEKDe5NulE'
+			}
+		}
+		});
+	</script>
+</body>
+</html>
